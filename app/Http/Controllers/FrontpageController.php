@@ -14,7 +14,7 @@ class FrontpageController extends Controller
     public function post_form (Request $request) {
         $data = array_merge($request->all());
         Form::create($data);
-        return view('frontpage.doctor');
+        return redirect()->back();
     }
     public function list_doctor (){
         $data = Doctor::paginate(6);

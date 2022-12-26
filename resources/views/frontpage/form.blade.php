@@ -6,14 +6,14 @@
     {{-- </x-slot> --}}
 
 
-    <div>
+    <div class="bg-white">
         <div class="container px-5 py-10 mx-auto" style="cursor: auto;">
             <div class="lg:w-4/5 mx-auto flex flex-wrap">
-                <img alt="ecommerce" class="lg:w-1/2 w-full lg:h-auto h-64 object-cover object-center rounded"
-                    src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
-                    style="cursor: auto;">
+                <img alt="ecommerce" class="h-80 w-72 object-cover object-top rounded-t-xl"
+                    src="{{ url($data->doctor_img) }}"></img>
                 <div class="lg:w-1/2 w-full lg:pl-10 lg:py-6 mt-6 lg:mt-0" style="cursor: auto;">
-                    <h1 class="text-gray-900 text-3xl title-font font-medium mb-1" style="cursor: auto;"> {{ $data->doctor_name }}
+                    <h1 class="text-gray-900 text-3xl title-font font-medium mb-1" style="cursor: auto;">
+                        {{ $data->doctor_name }}
                     </h1>
                     <div class="flex mb-4">
                         <span class="flex items-center">
@@ -98,75 +98,151 @@
                 </div>
             </div>
         </div>
-        <div class="max-w-screen-md mx-auto p-5 mt-10">
-            <div class="text-center mb-16">
-                <h3 class="text-3xl sm:text-4xl leading-normal font-extrabold tracking-tight text-gray-900">
-                    E<span class="text-blue-700">-Reservation</span>
-                </h3>
-            </div>
-            <form action="/post_form" method="POST" class="w-full">
+        <div class="flex items-center justify-center h-full">
+            <button class="py-2 px-4 bg-blue-500 text-white rounded hover:bg-blue-700" onclick="toggleModal()">Reserve Now!</button>
+        </div>
+        <div class="fixed z-10 overflow-y-auto top-0 w-full left-0 hidden" id="modal">
+            <form action="/post_form/" method="POST">
                 @csrf
-                <div class="flex flex-wrap -mx-3 mb-6">
-                    <div class="w-full px-3">
-                        <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
-                            for="form_name">
-                            Full Name
-                        </label>
-                        <input
-                            class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-                            id="form_name" type="name" />
+                <div
+                    class="flex items-center justify-center min-height-100vh pt-4 px-4 pb-20 text-center sm:block sm:p-0">
+                    <div class="fixed inset-0 transition-opacity">
+                        <div class="absolute inset-0 bg-gray-900 opacity-75" />
                     </div>
-                </div>
-                <div class="flex flex-wrap -mx-3 mb-6">
-                    <div class="w-full px-3">
-                        <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
-                            for="form_phonenumber">
-                            Phone Number
-                        </label>
-                        <input
-                            class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-                            id="form_phonenumber" type="text" />
-                    </div>
-                </div>
-                <div class="flex flex-wrap -mx-3 mb-6">
-                    <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
-                        <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
-                            for="form_date">
-                            Date
-                        </label>
-                        <input
-                            class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
-                            id="form_date" type="date" />
-                    </div>
-                    <div class="w-full md:w-1/2 px-3">
-                        <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
-                            for="form_time">
-                            Time
-                        </label>
-                        <input
-                            class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-                            id="form_time" type="time" />
-                    </div>
-                </div>
-                <div class="flex flex-wrap -mx-3 mb-6">
-                    <div class="w-full px-3">
-                        <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
-                            for="form_desc">
-                            Description
-                        </label>
-                        <input
-                            id="form_desc" class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" type="text">
-            </inp>
-                    </div>
-                    <div class="flex justify-center w-full px-3">
-                        <button
-                            class="my-6 shadow bg-indigo-600 hover:bg-indigo-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-6 rounded"
-                            type="submit">
-                            Submit
-                        </button>
+                    <span class="hidden sm:inline-block sm:align-middle sm:h-screen">&#8203;</span>
+                        <div class="inline-block align-center bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full"
+                        role="dialog" aria-modal="true" aria-labelledby="modal-headline">
+                        <div class="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pt-4 sm:pb-4">
+                            <div class="text-center mb-4">
+                                <h3 class="text-xl sm:text-2xl leading-normal font-extrabold tracking-tight text-gray-900">
+                                    E<span class="text-blue-700">-Reservation</span>
+                                </h3>
+                            </div>
+                            <input
+                                name="accept" value="0" type="hidden" />
+                            <input
+                                name="doctor" value="{{ $data->id_doctor }}" type="hidden" />
+                            <label>Full Name</label>
+                            <input type="text" name="form_name" class="w-full bg-gray-100 p-2 mt-2 mb-3" />
+                            <label>Phone Number</label>
+                            <input type="text" name="form_phonenum" class="w-full bg-gray-100 p-2 mt-2 mb-3" />
+                            <label>Address</label>
+                            <input type="text" name="address" class="w-full bg-gray-100 p-2 mt-2 mb-3" />
+                            <label>Date</label>
+                            <input type="date" name="form_date" class="w-full bg-gray-100 p-2 mt-2 mb-3" />
+                            <label>Time</label>
+                            <input type="time" name="form_time" class="w-full bg-gray-100 p-2 mt-2 mb-3" />
+                            <label>Description</label>
+                            <input type="text" name="form_desc" class="w-full bg-gray-100 p-2 mt-2 mb-3" />
+                        </div>
+                        <div class="bg-gray-200 px-4 py-3 text-right">
+                            <button type="button"
+                                class="py-2 px-4 bg-gray-500 text-white rounded hover:bg-gray-700 mr-2"
+                                onclick="toggleModal()">Cancel</button>
+                            <button type="submit"
+                                class="py-2 px-4 bg-indigo-600 hover:bg-indigo-500 focus:shadow-outline focus:outline-none text-white font-bold rounded mr-2">Submit</button>
+                        </div>
                     </div>
                 </div>
             </form>
         </div>
+        {{-- <div class="fixed z-10 overflow-y-auto top-0 w-full left-0 hidden" id="modal1">
+            <div
+                class="mx-auto w-fit p-4 bg-white border border-gray-200 rounded-lg shadow-md sm:p-6 md:p-8 dark:bg-gray-800 dark:border-gray-700">
+                <div class="max-w-screen-md mx-auto p-5 mt-10">
+                    <div class="text-center mb-16">
+                        <h3 class="text-3xl sm:text-4xl leading-normal font-extrabold tracking-tight text-gray-900">
+                            E<span class="text-blue-700">-Reservation</span>
+                        </h3>
+                    </div>
+                    <form action="/post_form/" method="POST" class="w-full">
+                        @csrf
+                        <input
+                            class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                            name="accept" value="0" type="hidden" />
+                        <input
+                            class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                            name="doctor" value="{{ $data->id_doctor }}" type="hidden" />
+                        <div class="flex flex-wrap -mx-3 mb-6">
+                            <div class="w-full px-3">
+                                <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+                                    for="form_name">
+                                    Full Name
+                                </label>
+                                <input
+                                    class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                                    name="form_name" type="name" />
+                            </div>
+                        </div>
+                        <div class="flex flex-wrap -mx-3 mb-6">
+                            <div class="w-full px-3">
+                                <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+                                    for="form_phonenum">
+                                    Phone Number
+                                </label>
+                                <input
+                                    class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                                    name="form_phonenum" type="text" />
+                            </div>
+                        </div>
+                        <div class="flex flex-wrap -mx-3 mb-6">
+                            <div class="w-full px-3">
+                                <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+                                    for="address">
+                                    Address
+                                </label>
+                                <input
+                                    class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                                    name="address" type="text" />
+                            </div>
+                        </div>
+                        <div class="flex flex-wrap -mx-3 mb-6">
+                            <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
+                                <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+                                    for="form_date">
+                                    Date
+                                </label>
+                                <input
+                                    class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+                                    name="form_date" type="date" />
+                            </div>
+                            <div class="w-full md:w-1/2 px-3">
+                                <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+                                    for="form_time">
+                                    Time
+                                </label>
+                                <input
+                                    class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                                    name="form_time" type="time" />
+                            </div>
+                        </div>
+                        <div class="flex flex-wrap -mx-3 mb-6">
+                            <div class="w-full px-3">
+                                <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+                                    for="form_desc">
+                                    Description
+                                </label>
+                                <input name="form_desc"
+                                    class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                                    type="text">
+                                </inp>
+                            </div>
+                            <div class="flex justify-center w-full px-3">
+                                <button
+                                    class="my-6 shadow bg-indigo-600 hover:bg-indigo-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-6 rounded"
+                                    type="submit">
+                                    Submit
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div> --}}
+        <script>
+            function toggleModal() {
+                document.getElementById('modal').classList.toggle('hidden')
+            }
+        </script>
     </div>
 </x-frontpage>
