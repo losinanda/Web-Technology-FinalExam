@@ -281,7 +281,7 @@
                             </svg>
                         </svg>
                         <h3 class="font-bold mb-4 text-md md:text-2xl text-gray-900"><a
-                                href="{{ route('list_doctor') }}">E-Reservation</a>
+                                href="#">E-Reservation</a>
                         </h3>
                         <p class="text-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus pulvinar faucibus neque.
                         </p>
@@ -361,8 +361,8 @@
                 </div>
             </div>
         </section>
-        <hr class="w-[25%] mx-auto my-5 block h-1 bg-gradient-to-r from-cyan-500 to-blue-500 " />
-        <section id="informations" class="bg-white dark:bg-gray-900">
+        {{-- <hr class="w-[25%] mx-auto my-5 block h-1 bg-gradient-to-r from-cyan-500 to-blue-500 " /> --}}
+        {{-- <section id="informations" class="bg-white dark:bg-gray-900">
             <h3 class="text-center font-bold mb-12 text-2xl md:text-4xl text-gray-800">Informations</h3>
             <div class="container px-6 pb-12 mx-auto">
                 <div class="grid grid-cols-1 gap-8 mt-4 md:mt-8 md:grid-cols-2 xl:grid-cols-3">
@@ -463,7 +463,7 @@
                     </div>
                 </div>
             </div>
-        </section>
+        </section> --}}
         <hr class="w-[15%] mx-auto my-5 block h-1 bg-gradient-to-r from-cyan-500 to-blue-500 " />
         {{-- <div class="container my-24 px-6 mx-auto"> --}}
             <section id="about" class="mb-12 text-gray-800">

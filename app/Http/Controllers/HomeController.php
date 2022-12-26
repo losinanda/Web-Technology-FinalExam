@@ -9,21 +9,22 @@ use Illuminate\Support\Facades\File;
 class HomeController extends Controller
 {
     
-    public function index(){
-         return view('viewDok.LoginDokter', [
-            "title"=> "Login"
-        ]);
-     }
-    public function home(){
-        return view('viewDok.Home', [
-            "title" => "Home"
-        ]);
-    }
-    public function dokter(){
-        return view('viewDok.dokter', [
-            "title" => "Dokter"
-        ]);
-    }
+    // public function index(){
+    //      return view('viewDok.LoginDokter', [
+    //         "title"=> "Login"
+    //     ]);
+    //  }
+    // public function home(){
+    //     return view('viewDok.Home', [
+    //         "title" => "Home"
+    //     ]);
+    // }
+    // public function dokter(){
+    //     return view('viewDok.dokter', [
+    //         "title" => "Dokter"
+    //     ]);
+    // }
+
     public function obat(){
         return view('viewDok.Obat', [
             "title" => "Obat",
@@ -31,16 +32,17 @@ class HomeController extends Controller
         ]);
     }
     public function adminObat(){
-        return view('viewDok.adminObat', [
-            "title" => "Obat Admin",
-            "posts" => Post::all()
+        $s = Post::paginate(5);
+        return view('backpage.medicine-list.medicine-list', [
+            // "title" => "Obat Admin",
+            "posts" => $s,
         ]);
     }
     public function create(){
         $model = new Post;
-        $title = "create page";
-        return view('viewDok.create', compact(
-            'model', 'title'
+        // $title = "create page";
+        return view('backpage.medicine-list.add_medicine', compact(
+            'model'
         ));
     }
     // public function store(Request $request){
@@ -60,6 +62,13 @@ class HomeController extends Controller
     //     Post::create($model);
     //     return redirect('Adminobat');
     // }
+
+    // public function percobaan(){
+    //     return view('viewDok.edit2', [
+    //        "title"=> "Percobaan"
+    //    ]);
+    // }
+
     public function store(Request $request){
         $model = new Post;
         $model->nama = $request->nama;
@@ -79,9 +88,9 @@ class HomeController extends Controller
     public function edit($id)
     {
         $model = Post::find($id);
-        $title = "Edit Page";
-        return view('viewDok.edit', compact(
-            'model', 'title'
+        // $title = "Edit Page";
+        return view('backpage.medicine-list.edit_medicine', compact(
+            'model',
         ));
     }
     public function update(Request $request, $id){
@@ -101,18 +110,14 @@ class HomeController extends Controller
                 $model->image = $path;
             }
         };
-        $model->save();
-
+        $model->update();
         return redirect('Adminobat');
     }
+    
     public function destroy($id){
         $model = Post::find($id);
         $model ->delete();
         return redirect('Adminobat');
     }
-    public function percobaan(){
-        return view('viewDok.edit2', [
-           "title"=> "Percobaan"
-       ]);
-    }
+    
 }

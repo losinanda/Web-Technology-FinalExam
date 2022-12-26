@@ -16,7 +16,7 @@
             <!-- Settings Dropdown -->
             <div class="hidden lg:flex lg:items-center lg:ml-6">
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    <a href="#">
+                    <a href="{{ route('homepage') }}">
                         {{ __('Home') }}
                     </a>
                 </div>

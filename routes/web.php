@@ -21,36 +21,7 @@ use App\Models\Post;
 |
 */
 
-
-
-
-
-Route::get('/index', [HomeController::class, 'index']);
-Route::get('/Home', [HomeController::class, 'home']);
-Route::get('/CekDokter', [HomeController::class, 'dokter']);
-Route::get('/Obat', [HomeController::class, 'obat'])->name('obat');
-// Route::get('/Category', function(Category $category){
-//     return view('viewDok.category', [
-//         "title"=> "Category",
-//         'posts'=> $category->posts,
-//         'category'=> $category->name_cat
-//     ]);
-
-// });
-Route::get('/percobaan', [HomeController::class, 'percobaan']);
-Route::post('/Adminobat', [HomeController::class, 'store']);
-Route::get('/create', [HomeController::class, 'create']);
-Route::get('/Adminobat', [HomeController::class, 'adminObat']);
-Route::get('/edit/{id}', [HomeController::class, 'edit']);
-Route::patch('/Adminobat/{id}', [HomeController::class, 'update']);
-Route::delete('/Adminobat/{id}', [HomeController::class, 'destroy']);
-
-
-// ---------------------------------------------------------------- //
-
-
-
-
+// Route Defaults
 Route::get('/', function () {
     return view('frontpage.homepage');
 })->name('homepage');
@@ -59,13 +30,42 @@ Route::get('/register', function () {
     return view('auth.register');
 })->name('register');
 
-
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
+
+// ---------------------------------------------------------------- //
+
+
+// Route Medicine Lists
+// Route::get('/index', [HomeController::class, 'index']);
+// Route::get('/Home', [HomeController::class, 'home']);
+// Route::get('/CekDokter', [HomeController::class, 'dokter']);
+// Route::get('/Category', function(Category $category){
+//     return view('viewDok.category', [
+//         "title"=> "Category",
+//         'posts'=> $category->posts,
+//         'category'=> $category->name_cat
+//     ]);
+
+// });
+// Route::get('/percobaan', [HomeController::class, 'percobaan']);
+
+Route::get('/Obat', [HomeController::class, 'obat'])->name('obat');
+Route::get('/create', [HomeController::class, 'create'])->name('create_obat');
+Route::get('/Adminobat', [HomeController::class, 'adminObat'])->name('admin_obat');
+Route::post('/Adminobat', [HomeController::class, 'store']);
+Route::get('/edit/{id}', [HomeController::class, 'edit'])->name('edit_obat');
+Route::patch('/Adminobat/{id}', [HomeController::class, 'update']);
+Route::get('/Adminobat/{id}', [HomeController::class, 'destroy'])->name('delete_obat');
+
+
+// ---------------------------------------------------------------- //
+
+//Route Doctor Lists
 Route::get('/list_doctor', [FrontpageController::class, 'list_doctor'])->name('list_doctor');
 Route::get('/detail_doctor', [FrontpageController::class, 'detail_doctor'])->name('detail_doctor');
 Route::get('/form/{id}', [FrontpageController::class, 'get_form'])->name('form');
@@ -106,7 +106,10 @@ Route::middleware('auth')->group(function () {
     Route::get('/admin/delete_form_user/{id}', [FormController::class, 'destroy'])->name('admin_deleteformuser');
     Route::get('/admin/search_form', [FormController::class, 'search'])->name('admin_searchform');
     //End Forms List Control
-
 });
+
+// Route::get('/get-started', function () {
+//     return view('frontpage.homepage-backup');
+// })->name('homepage2');
 
 require __DIR__ . '/auth.php';

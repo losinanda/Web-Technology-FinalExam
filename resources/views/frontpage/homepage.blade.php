@@ -11,7 +11,7 @@
                     <main class="mx-auto mt-24 max-w-7xl px-6 sm:mt-12 sm:px-6 md:mt-16 lg:mt-20 lg:px-8 xl:mt-28">
                         <div class="sm:text-center lg:text-left pt-16">
                             <h1 class="text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl md:text-6xl">
-                                <p class="block xl:inline">Let Healty</p> <br>
+                                <p class="block xl:inline">Let Healthy</p> <br>
                                 <p class="block text-cyan-600 xl:inline">Sehat Untuk Semua</>
                             </h1>
                             <p
@@ -22,15 +22,16 @@
                             </p>
                             <div class="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start">
                                 <div class="rounded-md shadow">
+                                    {{-- <a href="{{ route('homepage2') }}" --}}
                                     <a href="#"
                                         class="flex w-full items-center justify-center rounded-md border border-transparent bg-cyan-600 px-8 py-3 text-base font-medium text-white hover:bg-cyan-700 md:py-4 md:px-10 md:text-lg">Get
                                         started</a>
                                 </div>
-                                <div class="mt-3 sm:mt-0 sm:ml-3">
+                                {{-- <div class="mt-3 sm:mt-0 sm:ml-3">
                                     <a href="#"
                                         class="flex w-full items-center justify-center rounded-md border border-transparent bg-cyan-100 px-8 py-3 text-base font-medium text-cyan-600 hover:bg-cyan-200 md:py-4 md:px-10 md:text-lg">Live
                                         demo</a>
-                                </div>
+                                </div> --}}
                             </div>
                         </div>
                     </main>

@@ -25,6 +25,11 @@
                 <i class="fas fa-stethoscope mr-3"></i>
                 Specialization List
             </a>
+            <a href="{{ route('admin_obat') }}"
+                class="flex items-center text-white opacity-75 hover:opacity-100 py-4 pl-6 nav-item">
+                <i class="fas fa-pills mr-3"></i>
+                Medicine List
+            </a>
             <a href="{{ route('admin_formuser') }}"
                 class="flex items-center text-white opacity-75 hover:opacity-100 py-4 pl-6 nav-item">
                 <i class="fas fa-clipboard-list mr-3"></i>
