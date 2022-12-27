@@ -8,8 +8,9 @@ use App\Models\Category;
 class Post extends Model
 {
     use HasFactory;
+    protected $table = 'medicine';
     protected $guarded = ['id'];
-    protected $fillable = ['toko','harga','nama', 'image'];
+    protected $fillable = ['toko','harga','nama', 'image', 'deskripsi'];
 
     public function category(){
         return $this->belongsTo(Category::class);

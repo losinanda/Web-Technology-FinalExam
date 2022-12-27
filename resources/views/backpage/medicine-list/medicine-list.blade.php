@@ -9,8 +9,8 @@
                 data</a>
         </div>
 
-        {{-- <div class="overflow-x-auto relative sm:rounded-lg mb-4">
-            <form class="form" method="get" action="{{ route('admin_searchdoctor') }}">
+        <div class="overflow-x-auto relative sm:rounded-lg mb-4">
+            <form class="form" method="get" action="/Adminobat/search_obat">
                 <div class="flex flex-col lg:flex-row mt-4 lg:mt-0 justify-end items-center">
                     <div class="relative">
                         <label for="search" class="sr-only">Search</label>
@@ -32,7 +32,7 @@
                             class="block py-2 pr-8 w-fit text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
                             <option value="">Filter</option>
                             @foreach ($s as $sp)
-                                <option value="{{ $sp->id_specialization }}">{{ $sp->name_specialization }}
+                                <option value="{{ $sp->id }}">{{ $sp->name_cat }}
                                 </option>
                             @endforeach
                         </select>
@@ -41,11 +41,11 @@
                         <button type="submit"
                             class="inline-flex justify-end rounded-md border border-transparent bg-[#3d68ff] py-2 px-4 text-sm font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">Search</button>
                         <a class="inline-flex justify-end rounded-md border border-gray-500 bg-transparent py-2 px-4 text-sm font-medium text-gray-800 shadow-sm hover:bg-gray-800 hover:text-white focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2"
-                            href="{{ route('admin_listdoctor') }}">Reset</a>
+                            href="{{ route('admin_obat') }}">Reset</a>
                     </div>
                 </div>
             </form>
-        </div> --}}
+        </div>
         <div class="w-full mt-5">
             <div class="bg-white overflow-auto mb-6">
                 <table class="text-left w-full border-collapse">

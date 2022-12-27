@@ -55,8 +55,10 @@ Route::middleware('auth')->group(function () {
 // Route::get('/percobaan', [HomeController::class, 'percobaan']);
 
 Route::get('/Obat', [HomeController::class, 'obat'])->name('obat');
+Route::get('/Descobat/{id}', [HomeController::class, 'desc_obat'])->name('desc_obat');
 Route::get('/create', [HomeController::class, 'create'])->name('create_obat');
 Route::get('/Adminobat', [HomeController::class, 'adminObat'])->name('admin_obat');
+Route::get('/Adminobat/search_obat', [HomeController::class, 'search_obat'])->name('admin_searchobat');
 Route::post('/Adminobat', [HomeController::class, 'store']);
 Route::get('/edit/{id}', [HomeController::class, 'edit'])->name('edit_obat');
 Route::patch('/Adminobat/{id}', [HomeController::class, 'update']);
@@ -72,11 +74,16 @@ Route::get('/form/{id}', [FrontpageController::class, 'get_form'])->name('form')
 Route::post('/post_form', [FrontpageController::class, 'post_form'])->name('post_form');
 
 Route::middleware('auth')->group(function () {
-    Route::get('/admin', function () {
-        return view('backpage.dashboard');
-    })->name('admin');
+    Route::get('/admin', [DoctorController::class, 'dashboard'])->name('admin');
+    // Route::get('/admin', function () {
+    //     return view('backpage.dashboard');
+    // })->name('admin');
 
-    // Start Doctor List Control
+    Route::get('/dashboard_user', function () {
+        return view('frontpage.dashboard');
+    })->name('dashboard_user');
+
+    // Start Doctor List Control 
     Route::get('/admin/list_doctor', [DoctorController::class, 'index'])->name('admin_listdoctor');
     Route::get('/admin/add_doctor', [DoctorController::class, 'create'])->name('admin_adddoctor');
     Route::post('/admin/store_doctor', [DoctorController::class, 'store'])->name('admin_postdoctor');
@@ -99,7 +106,8 @@ Route::middleware('auth')->group(function () {
 });
 Route::middleware('auth')->group(function () {
     // Start Forms List Control
-    Route::get('/admin/form_user', [FormController::class, 'index'])->name('admin_formuser');
+    // Route::get('/admin/form/{id}', [FormController::class, 'index'])->name('admin_form');
+    Route::get('/admin/form_user/', [FormController::class, 'index'])->name('admin_formuser');
     Route::get('/admin/info_form_user/{id}', [FormController::class, 'info'])->name('admin_infoformuser');
     Route::post('/admin/edit_form_user/post_note/{id}', [FormController::class, 'store_note'])->name('admin_editformuser_postnote');
     Route::post('/admin/edit_form_user/post_approval/{id}', [FormController::class, 'store_approval'])->name('admin_editformuser_postapproval');

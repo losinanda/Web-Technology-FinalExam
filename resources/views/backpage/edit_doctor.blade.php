@@ -1,7 +1,7 @@
 <x-backpage>
     <div class="w-full">
         <p class="text-xl pb-4 flex items-center">
-            Add New Doctor Data
+            Edit Doctor Data
         </p>
         <div class="overflow-auto">
             <form action="{{ route('admin_updatedoctor', ['id' => $d->id_doctor]) }}" method="POST"
@@ -35,11 +35,11 @@
                                 <input type="text" name="address" id="address" value="{{ $d->address }}"
                                     class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
                             </div>
-                            <div class="col-span-6 sm:col-span-4">
+                            {{-- <div class="col-span-6 sm:col-span-4">
                                 <label for="address" class="block text-sm font-medium text-gray-700">Address</label>
                                 <input type="text" name="address" id="address" value="{{ $d->address }}"
                                     class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
-                            </div>
+                            </div> --}}
                             {{-- <div class="col-span-6 sm:col-span-4">
                                 <label class="block text-sm font-medium text-gray-700">Description</label>
                                 <div class="mt-1 block w-full rounded-md border-gray-600 shadow-sm sm:text-sm">

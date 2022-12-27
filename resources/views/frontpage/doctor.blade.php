@@ -21,11 +21,24 @@
                     <div class="flex items-center">
                         <span class="text-gray-600 mr-3 capitalize text-sm"> {{ $d->test1->name_specialization }} </span>
                     </div>
+                    @if ($d->open == 0)
+                    <div class="flex items-center mt-2">
+                        <span class="text-white rounded px-2  bg-red-500 mr-3 capitalize text-sm"> Not Available </span>
+                    </div>
+                        {{-- <span
+                            class="flex bg-red-500 py-0.5 rounded-md px-2 ml-2 text-white border-l-2 border-gray-200">
+                            Not Available
+                        </span> --}}
+                        @else
+                        <div class="flex items-center">
+                            <span class="text-white rounded mt-2 px-2 bg-green-500 mr-3 capitalize text-sm"> Available </span>
+                        </div>
+                        @endif
                 </div>
                 <div class="w-fit py-3 mx-auto">
                     <a href="/form/{{ $d->id_doctor }}"
                         class="group font-semibold block px-6 py-3 mb-3 rounded-2xl bg-gradient-to-r from-indigo-500 to-indigo-700 text-center text-white transition duration-200 hover:shadow-2xl">
-                        Reserve Now
+                        See Details
                     </a>
                 </div>
                 {{-- </a> --}}

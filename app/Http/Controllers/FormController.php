@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Form;
+use App\Models\Doctor;
+use Illuminate\Support\Facades\DB;
 
 class FormController extends Controller
 {
@@ -14,8 +16,12 @@ class FormController extends Controller
      */
     public function index()
     {
-        //
-        $data = Form::orderBy('updated_at', 'desc')->paginate(5);
+        // $data = Doctor::where('id_doctor', $id)
+        //     ->join('forms', 'id_doctor', '=', 'forms.doctor')
+        //     ->select('doctors.*', 'forms.*')
+        //     ->get();
+        $data = Form::paginate(5);
+        // dd($data);
         return view('backpage.form-list.form', compact('data'));
     }
 
@@ -53,11 +59,10 @@ class FormController extends Controller
         $approve = $request->approve;
         if ($approve != null) {
             $collect = array_merge(['accept' => $request->approve]);
-        }
-        else if ($reject != null) {
+        } else if ($reject != null) {
             $collect = array_merge(['accept' => $request->reject]);
         }
-        
+
         $data->update($collect);
         return redirect()->route('admin_formuser');
     }
@@ -115,9 +120,9 @@ class FormController extends Controller
             $search = $_GET['search'];
             $data = $data->where('form_name', 'like', "%$search%");
         }
-        // if (isset($_GET['filter']) && $_GET['filter'] != '') {
-        //     $data = $data->where('specialization', $_GET['filter']);
-        // }
+        if (isset($_GET['filter']) && $_GET['filter'] != '') {
+            $data = $data->where('accept', $_GET['filter']);
+        }
         $data = $data->paginate(5);
         return view('backpage.form-list.form', compact('data'));
     }

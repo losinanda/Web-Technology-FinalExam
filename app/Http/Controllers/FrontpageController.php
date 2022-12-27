@@ -20,4 +20,8 @@ class FrontpageController extends Controller
         $data = Doctor::paginate(6);
         return view('frontpage.doctor', ['doctor' => $data]);
     }
+
+    // public function dashboard() {
+    //     return view('frontpage.dashboard');
+    // }
 }

@@ -1,7 +1,7 @@
 <x-backpage>
     <div class="w-full">
         <p class="text-xl pb-4 flex items-center">
-            Add New Medicine Data
+            Edit Medicine Data
         </p>
         <div class="overflow-auto">
             <form action="/Adminobat/{{$model->id}}" class="w-full " method="POST" enctype="multipart/form-data">
@@ -31,6 +31,12 @@
                                 <option value="4">Obat Narkotika</option>
                             </select>
                         </div>
+                        <div class="col-span-6 sm:col-span-4">
+                            <label for="deskripsi" class="block text-sm font-medium text-gray-700">Deskripsi</label>
+                            <textarea id="deskripsi" name="deskripsi"
+                                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                        </textarea>
+                        </div>
                         <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
                             >Image</label>
                             <div>
@@ -51,7 +57,7 @@
             </form>
             <script src="https://cdn.ckeditor.com/4.16.0/standard/ckeditor.js"></script>
             <script>
-                CKEDITOR.replace('doctor_desc');
+                CKEDITOR.replace('deskripsi');
             </script>
 
             {{--

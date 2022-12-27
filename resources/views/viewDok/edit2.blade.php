@@ -2,7 +2,7 @@
 @section('container')
 <div class="w-full mt-5">
     <p class="text-xl pb-4 flex items-center">
-        Add New Doctor Data
+        Edit Data
     </p>
     <div class="bg-white overflow-auto">
         <div>

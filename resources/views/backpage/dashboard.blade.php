@@ -27,22 +27,68 @@
                 </main>
             </div>
         </div> --}}
-        <div class="flex items-center p-8 bg-white shadow rounded-lg">
-            <div
-                class="inline-flex flex-shrink-0 items-center justify-center h-16 w-16 text-blue-600 bg-blue-100 rounded-full mr-6">
-                <svg aria-hidden="true" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="h-6 w-6">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                        d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
-                </svg>
-            </div>
-            <div>
-                <span class="block text-2xl font-bold">62</span>
-                <span class="block text-gray-500">Students</span>
-            </div>
-        </div>
-    </div>
 
-    {{-- <!-- AlpineJS -->
+            <div class="mx-auto m-8 grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-4">
+                <!--  Monthly card start  -->
+                <div class="pl-1 w-96 h-20 bg-green-400 rounded-lg shadow-md">
+                    <div class="flex w-full h-full py-2 px-4 bg-white rounded-lg justify-between">
+                        <div class="my-auto">
+                            <p class="font-bold">DOCTOR LIST</p>
+                            <p class="text-lg">{{ $doctor }} Doctor</p>
+                        </div>
+                        <div class="my-auto">
+                            <div class="my-auto">
+                                <i class="fas fa-user-md"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--  Monthly card end  -->
+                <!--  Annual card start -->
+                <div class="pl-1 w-96 h-20 bg-blue-500 rounded-lg shadow-md">
+                    <div class="flex w-full h-full py-2 px-4 bg-white rounded-lg justify-between">
+                        <div class="my-auto">
+                            <p class="font-bold">Specialization</p>
+                            <p class="text-lg"> {{ $sp }} Specialization</p>
+                        </div>
+                        <div class="my-auto">
+                            <div class="my-auto">
+                                <i class="fas fa-stethoscope"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--  Annual card end  -->
+                <!--  Tasks card start  -->
+                <div class="pl-1 w-96 h-20 bg-purple-500 rounded-lg shadow-md">
+                    <div class="flex w-full h-full py-2 px-4 bg-white rounded-lg justify-between">
+                        <div class="my-auto">
+                            <p class="font-bold">Medicine</p>
+                            <p class="text-lg">{{ $med }} Medicine</p>
+                        </div>
+                        <div class="my-auto">
+                            <div class="my-auto">
+                                <i class="fas fa-pills"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--  Tasks card end  -->
+                <!--  Pending requests card start  -->
+                <div class="pl-1 w-96 h-20 bg-yellow-400 rounded-lg shadow-md">
+                    <div class="flex w-full h-full py-2 px-4 bg-white rounded-lg justify-between">
+                        <div class="my-auto">
+                            <p class="font-bold">Form</p>
+                            <p class="text-lg">{{ $form }} Form</p>
+                        </div>
+                        <div class="my-auto">
+                            <i class="fas fa-clipboard-list"></i>
+                        </div>
+                    </div>
+                </div>
+                <!--  Pending requests card end  -->
+            </div>
+        {{-- <!-- AlpineJS -->
     <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
     <!-- Font Awesome -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js"

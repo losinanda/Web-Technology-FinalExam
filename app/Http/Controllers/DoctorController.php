@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\Doctor;
-use Illuminate\Http\Request;
 use App\Models\Specialization;
+use App\Models\Post;
+use App\Models\Form;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Hash;
 
@@ -15,7 +17,15 @@ class DoctorController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function dashboard() {
+        $form = Form::all()->count();
+        $sp = Specialization::all()->count();
+        $doctor = Doctor::all()->count();
+        $med = Post::all()->count();
+        return view('backpage.dashboard',compact('form', 'sp','doctor','med'));
+    }
+    
+     public function index()
     {
         $doctor = Doctor::orderBy('updated_at', 'desc')->paginate(5);
         $s = Specialization::all();

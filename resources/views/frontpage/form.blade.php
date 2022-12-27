@@ -5,8 +5,94 @@
     {{-- </h2> --}}
     {{-- </x-slot> --}}
 
-
-    <div class="bg-white">
+    <section class="text-gray-700 body-font overflow-hidden bg-white h-screen">
+        <div class="container px-5 py-6 mx-auto">
+            <div class="lg:w-4/5 mx-auto flex flex-wrap">
+                <img alt="ecommerce"
+                    class="lg:w-5/12 w-1/4 h-full object-cover object-center rounded border border-gray-200"
+                    src="{{ url($data->doctor_img) }}">
+                <div class="lg:w-1/2 w-full lg:pl-10 lg:py-6 mt-6 lg:mt-0">
+                    <h2 class="text-sm title-font text-gray-500 tracking-widest">DETAIL DOCTOR</h2>
+                    <h1 class="text-gray-900 text-3xl title-font font-medium mb-1"> {{ $data->doctor_name }}</h1>
+                    <div class="flex mb-4">
+                        <span class="flex items-center">
+                            <svg fill="currentColor" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" class="w-4 h-4 text-red-500"
+                                viewBox="0 0 24 24">
+                                <path
+                                    d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z">
+                                </path>
+                            </svg>
+                            <svg fill="currentColor" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" class="w-4 h-4 text-red-500"
+                                viewBox="0 0 24 24">
+                                <path
+                                    d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z">
+                                </path>
+                            </svg>
+                            <svg fill="currentColor" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" class="w-4 h-4 text-red-500"
+                                viewBox="0 0 24 24">
+                                <path
+                                    d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z">
+                                </path>
+                            </svg>
+                            <svg fill="currentColor" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" class="w-4 h-4 text-red-500"
+                                viewBox="0 0 24 24">
+                                <path
+                                    d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z">
+                                </path>
+                            </svg>
+                            <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                stroke-width="2" class="w-4 h-4 text-red-500" viewBox="0 0 24 24">
+                                <path
+                                    d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z">
+                                </path>
+                            </svg>
+                            <span class="text-gray-600 ml-3">4 Reviews</span>
+                        </span>
+                        @if ($data->open == 0)
+                            <span
+                                class="flex bg-red-500 py-0.5 rounded-md px-2 ml-2 text-white border-l-2 border-gray-200">
+                                Not Available
+                            </span>
+                        @else
+                            <span
+                                class="flex bg-green-500 py-0.5 rounded-md px-2 ml-2 text-white border-l-2 border-gray-200">
+                                Available
+                            </span>
+                        @endif
+                    </div>
+                    <p class="leading-relaxed">{!! $data->doctor_desc !!}</p>
+                    <div class="flex mt-6 items-center pb-5 border-b-2 border-gray-200 mb-5">
+                        <div class="flex">
+                            <span
+                                class=" px-3 py-1 rounded-full bg-gray-100 ">{{ $data->test1->name_specialization }}</span>
+                        </div>
+                    </div>
+                    <div class="flex">
+                        {{-- <span class="title-font font-medium text-2xl text-gray-900">{{ $data->harga }}</span> --}}
+                        @if ($data->open != 0)
+                            <button onclick="toggleModal()"
+                                class="flex ml-auto text-white border-0 py-2 px-6 focus:outline-none  bg-blue-500 hover:bg-blue-700 rounded">Create Reservation
+                                Now</button>
+                        @endif
+                        <button
+                            class="rounded-full w-10 h-10 bg-gray-200 p-0 border-0 inline-flex items-center justify-center text-gray-500 ml-4">
+                            <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                class="w-5 h-5" viewBox="0 0 24 24">
+                                <path
+                                    d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z">
+                                </path>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    {{-- <div class="bg-white">
         <div class="container px-5 py-10 mx-auto" style="cursor: auto;">
             <div class="lg:w-4/5 mx-auto flex flex-wrap">
                 <img alt="ecommerce" class="h-80 w-72 object-cover object-top rounded-t-xl"
@@ -94,59 +180,52 @@
                                 </path>
                             </svg>
                         </button>
-                    </div> --}}
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="flex items-center justify-center h-full">
-            <button class="py-2 px-4 bg-blue-500 text-white rounded hover:bg-blue-700" onclick="toggleModal()">Reserve Now!</button>
-        </div>
-        <div class="fixed z-10 overflow-y-auto top-0 w-full left-0 hidden" id="modal">
-            <form action="/post_form/" method="POST">
-                @csrf
-                <div
-                    class="flex items-center justify-center min-height-100vh pt-4 px-4 pb-20 text-center sm:block sm:p-0">
-                    <div class="fixed inset-0 transition-opacity">
-                        <div class="absolute inset-0 bg-gray-900 opacity-75" />
+        </div> --}}
+    <div class="fixed z-10 overflow-y-auto top-0 w-full left-0 hidden" id="modal">
+        <form action="/post_form/" method="POST">
+            @csrf
+            <div class="flex items-center justify-center min-height-100vh pt-4 px-4 pb-20 text-center sm:block sm:p-0">
+                <div class="fixed inset-0 transition-opacity">
+                    <div class="absolute inset-0 bg-gray-900 opacity-75" />
+                </div>
+                <span class="hidden sm:inline-block sm:align-middle sm:h-screen">&#8203;</span>
+                <div class="inline-block align-center bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full"
+                    role="dialog" aria-modal="true" aria-labelledby="modal-headline">
+                    <div class="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pt-4 sm:pb-4">
+                        <div class="text-center mb-4">
+                            <h3 class="text-xl sm:text-2xl leading-normal font-extrabold tracking-tight text-gray-900">
+                                E<span class="text-blue-700">-Reservation</span>
+                            </h3>
+                        </div>
+                        <input name="accept" value="0" type="hidden" />
+                        <input name="doctor" value="{{ $data->id_doctor }}" type="hidden" />
+                        <label>Full Name</label>
+                        <input type="text" name="form_name" class="w-full bg-gray-100 p-2 mt-2 mb-3" />
+                        <label>Phone Number</label>
+                        <input type="text" name="form_phonenum" class="w-full bg-gray-100 p-2 mt-2 mb-3" />
+                        <label>Address</label>
+                        <input type="text" name="address" class="w-full bg-gray-100 p-2 mt-2 mb-3" />
+                        <label>Date</label>
+                        <input type="date" name="form_date" class="w-full bg-gray-100 p-2 mt-2 mb-3" />
+                        <label>Time</label>
+                        <input type="time" name="form_time" class="w-full bg-gray-100 p-2 mt-2 mb-3" />
+                        <label>Description</label>
+                        <input type="text" name="form_desc" class="w-full bg-gray-100 p-2 mt-2 mb-3" />
                     </div>
-                    <span class="hidden sm:inline-block sm:align-middle sm:h-screen">&#8203;</span>
-                        <div class="inline-block align-center bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full"
-                        role="dialog" aria-modal="true" aria-labelledby="modal-headline">
-                        <div class="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pt-4 sm:pb-4">
-                            <div class="text-center mb-4">
-                                <h3 class="text-xl sm:text-2xl leading-normal font-extrabold tracking-tight text-gray-900">
-                                    E<span class="text-blue-700">-Reservation</span>
-                                </h3>
-                            </div>
-                            <input
-                                name="accept" value="0" type="hidden" />
-                            <input
-                                name="doctor" value="{{ $data->id_doctor }}" type="hidden" />
-                            <label>Full Name</label>
-                            <input type="text" name="form_name" class="w-full bg-gray-100 p-2 mt-2 mb-3" />
-                            <label>Phone Number</label>
-                            <input type="text" name="form_phonenum" class="w-full bg-gray-100 p-2 mt-2 mb-3" />
-                            <label>Address</label>
-                            <input type="text" name="address" class="w-full bg-gray-100 p-2 mt-2 mb-3" />
-                            <label>Date</label>
-                            <input type="date" name="form_date" class="w-full bg-gray-100 p-2 mt-2 mb-3" />
-                            <label>Time</label>
-                            <input type="time" name="form_time" class="w-full bg-gray-100 p-2 mt-2 mb-3" />
-                            <label>Description</label>
-                            <input type="text" name="form_desc" class="w-full bg-gray-100 p-2 mt-2 mb-3" />
-                        </div>
-                        <div class="bg-gray-200 px-4 py-3 text-right">
-                            <button type="button"
-                                class="py-2 px-4 bg-gray-500 text-white rounded hover:bg-gray-700 mr-2"
-                                onclick="toggleModal()">Cancel</button>
-                            <button type="submit"
-                                class="py-2 px-4 bg-indigo-600 hover:bg-indigo-500 focus:shadow-outline focus:outline-none text-white font-bold rounded mr-2">Submit</button>
-                        </div>
+                    <div class="bg-gray-200 px-4 py-3 text-right">
+                        <button type="button" class="py-2 px-4 bg-gray-500 text-white rounded hover:bg-gray-700 mr-2"
+                            onclick="toggleModal()">Cancel</button>
+                        <button type="submit"
+                            class="py-2 px-4 bg-indigo-600 hover:bg-indigo-500 focus:shadow-outline focus:outline-none text-white font-bold rounded mr-2">Submit</button>
                     </div>
                 </div>
-            </form>
-        </div>
-        {{-- <div class="fixed z-10 overflow-y-auto top-0 w-full left-0 hidden" id="modal1">
+            </div>
+        </form>
+    </div>
+    {{-- <div class="fixed z-10 overflow-y-auto top-0 w-full left-0 hidden" id="modal1">
             <div
                 class="mx-auto w-fit p-4 bg-white border border-gray-200 rounded-lg shadow-md sm:p-6 md:p-8 dark:bg-gray-800 dark:border-gray-700">
                 <div class="max-w-screen-md mx-auto p-5 mt-10">
@@ -239,10 +318,10 @@
                 </div>
             </div>
         </div> --}}
-        <script>
-            function toggleModal() {
-                document.getElementById('modal').classList.toggle('hidden')
-            }
-        </script>
+    <script>
+        function toggleModal() {
+            document.getElementById('modal').classList.toggle('hidden')
+        }
+    </script>
     </div>
 </x-frontpage>

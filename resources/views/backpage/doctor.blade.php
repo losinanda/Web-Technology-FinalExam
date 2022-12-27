@@ -63,10 +63,13 @@
                             <th
                                 class="py-4 px-6 bg-grey-lightest font-bold uppercase text-md text-grey-dark border-b border-grey-light">
                                 Phone Number</th>
+                            {{-- <th
+                                class="py-4 px-6 bg-grey-lightest font-bold uppercase text-md text-grey-dark border-b border-grey-light">
+                                Form</th> --}}
                             <th
                                 class="py-4 px-6 bg-grey-lightest font-bold uppercase text-md text-grey-dark border-b border-grey-light">
                                 Action</th>
-                            
+
                         </tr>
                     </thead>
                     {{-- @php
@@ -83,6 +86,13 @@
                                 <td class="py-4 px-6 border-b border-grey-light">
                                     {{ $d->phone_num }}</td>
                                 </td>
+                                {{-- <td class="py-4 px-6 border-b border-grey-light">
+                                    <div class="flex">
+                                        <a href="/admin/form_user/{{ $d->id_doctor }}"
+                                            class="text-white text-center bg-blue-500 hover:bg-blue-600 focus:ring-4 focus:ring-blue-600 font-medium rounded-lg text-sm px-4 py-2.5 mr-2 mb-4 dark:bg-blue-500 dark:hover:bg-blue-600 focus:outline-none dark:focus:ring-blue-600"><i
+                                                class="fas fa-clipboard-list"></i></a>
+                                    </div>
+                                </td> --}}
                                 <td class="py-4 px-6 border-b border-grey-light">
                                     <div class="flex">
                                         <a href="{{ route('admin_editdoctor', ['id' => $d->id_doctor]) }}"

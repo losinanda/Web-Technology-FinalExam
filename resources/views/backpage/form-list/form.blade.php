@@ -1,6 +1,6 @@
 <x-backpage>
     <div class="w-full mt-5">
-        <p class="text-xl pb-4 flex items-center">
+        <p class="text-xl pb-4 mb-5 flex items-center">
             Form List Menu
         </p>
 
@@ -26,10 +26,12 @@
                         <select name="filter" id="filter"
                             class="block py-2 pr-8 w-fit text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
                             <option value="">Filter</option>
-                            {{-- @foreach ($s as $sp)
-                                <option value="{{ $sp->id_specialization }}">{{ $sp->name_specialization }}
-                                </option>
-                            @endforeach --}}
+                            <option value="0">Waiting For Confirmation
+                            </option>
+                            <option value="1">Rejected
+                            </option>
+                            <option value="2">Accepted
+                            </option>
                         </select>
                     </div>
                     <div class="px-4 py-1 my-2 text-right sm:px-6">
@@ -91,10 +93,10 @@
                                 <td class="py-4 px-6 border-b border-grey-light">
                                     <div class="flex">
                                         @if ($d->accept == 0)
-                                        <div
-                                            class="text-white text-center bg-yellow-500 font-medium rounded-lg text-sm px-4 py-2.5 mr-2 mb-4">
-                                            <i class="fas fa-clock" style="text:white"></i>
-                                        </div>
+                                            <div
+                                                class="text-white text-center bg-yellow-500 font-medium rounded-lg text-sm px-4 py-2.5 mr-2 mb-4">
+                                                <i class="fas fa-clock" style="text:white"></i>
+                                            </div>
                                         @elseif ($d->accept == 1)
                                             <div
                                                 class="text-white text-center bg-red-500 font-medium rounded-lg text-sm px-4 py-2.5 mr-2 mb-4">

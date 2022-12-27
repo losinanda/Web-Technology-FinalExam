@@ -42,10 +42,10 @@
                         </span>
                         <!-- product action button -->
                         <div class=" mt-5 flex gap-2 ">
-                            <button
+                            <a href="/Descobat/{{ $post->id }}"
                                 class=" bg-yellow-500/80 hover:bg-yellow-500/90 px-6 py-2 rounded-md text-white font-medium tracking-wider transition ">
-                                Add to Cart
-                            </button>
+                                See Details
+                            </a>
                         </div>
                     </div>
                 </div>
