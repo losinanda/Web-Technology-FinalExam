@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <title>{{ config('frontpage.name', 'Admin | Puskesmas Buleleng I') }}</title>
     <link rel="stylesheet" href="//use.fontawesome.com/releases/v5.0.7/css/all.css">
     <!-- Fonts -->

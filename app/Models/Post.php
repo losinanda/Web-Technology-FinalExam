@@ -9,7 +9,7 @@ class Post extends Model
 {
     use HasFactory;
     protected $table = 'medicine';
-    protected $guarded = ['id'];
+    protected $guarded = 'id';
     protected $fillable = ['toko','harga','nama', 'image', 'deskripsi'];
 
     public function category(){

@@ -28,66 +28,117 @@
             </div>
         </div> --}}
 
-            <div class="mx-auto m-8 grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-4">
-                <!--  Monthly card start  -->
-                <div class="pl-1 w-96 h-20 bg-green-400 rounded-lg shadow-md">
-                    <div class="flex w-full h-full py-2 px-4 bg-white rounded-lg justify-between">
-                        <div class="my-auto">
-                            <p class="font-bold">DOCTOR LIST</p>
-                            <p class="text-lg">{{ $doctor }} Doctor</p>
-                        </div>
-                        <div class="my-auto">
-                            <div class="my-auto">
-                                <i class="fas fa-user-md"></i>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!--  Monthly card end  -->
-                <!--  Annual card start -->
-                <div class="pl-1 w-96 h-20 bg-blue-500 rounded-lg shadow-md">
-                    <div class="flex w-full h-full py-2 px-4 bg-white rounded-lg justify-between">
-                        <div class="my-auto">
-                            <p class="font-bold">Specialization</p>
-                            <p class="text-lg"> {{ $sp }} Specialization</p>
-                        </div>
-                        <div class="my-auto">
-                            <div class="my-auto">
-                                <i class="fas fa-stethoscope"></i>
-                            </div>
+        <div class="mx-auto m-8 grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-4">
+            <!--  Monthly card start  -->
+            <div class="pl-1 w-96 h-20 bg-yellow-400 rounded-lg shadow-md">
+                <div class="flex w-full h-full py-2 px-4 bg-white rounded-lg justify-between">
+                    <div class="my-auto">
+                        <p class="uppercase font-bold">Current Time</p>
+                        <div class="clock">
+                            <div id="Date"></div>
+                            <ul>
+                                <li class="inline" id="hours"></li>
+                                <li class="inline" id="point">:</li>
+                                <li class="inline" id="min"></li>
+                                <li class="inline" id="point">:</li>
+                                <li class="inline" id="sec"></li>
+                            </ul>
                         </div>
                     </div>
-                </div>
-                <!--  Annual card end  -->
-                <!--  Tasks card start  -->
-                <div class="pl-1 w-96 h-20 bg-purple-500 rounded-lg shadow-md">
-                    <div class="flex w-full h-full py-2 px-4 bg-white rounded-lg justify-between">
-                        <div class="my-auto">
-                            <p class="font-bold">Medicine</p>
-                            <p class="text-lg">{{ $med }} Medicine</p>
-                        </div>
-                        <div class="my-auto">
-                            <div class="my-auto">
-                                <i class="fas fa-pills"></i>
-                            </div>
-                        </div>
+                    <div class="my-auto">
+                        <i class="fas fa-clock"></i>
                     </div>
                 </div>
-                <!--  Tasks card end  -->
-                <!--  Pending requests card start  -->
-                <div class="pl-1 w-96 h-20 bg-yellow-400 rounded-lg shadow-md">
-                    <div class="flex w-full h-full py-2 px-4 bg-white rounded-lg justify-between">
-                        <div class="my-auto">
-                            <p class="font-bold">Form</p>
-                            <p class="text-lg">{{ $form }} Form</p>
-                        </div>
-                        <div class="my-auto">
-                            <i class="fas fa-clipboard-list"></i>
-                        </div>
-                    </div>
-                </div>
-                <!--  Pending requests card end  -->
             </div>
+            <div class="pl-1 w-96 h-20 bg-green-400 rounded-lg shadow-md">
+                <div class="flex w-full h-full py-2 px-4 bg-white rounded-lg justify-between">
+                    <div class="my-auto">
+                        <p class="font-bold">DOCTOR LIST</p>
+                        <p class="text-lg">{{ $doctor }} Doctor</p>
+                    </div>
+                    <div class="my-auto">
+                        <div class="my-auto">
+                            <i class="fas fa-user-md"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--  Monthly card end  -->
+            <!--  Annual card start -->
+            <div class="pl-1 w-96 h-20 bg-blue-500 rounded-lg shadow-md">
+                <div class="flex w-full h-full py-2 px-4 bg-white rounded-lg justify-between">
+                    <div class="my-auto">
+                        <p class="uppercase font-bold">Specialization</p>
+                        <p class="text-lg"> {{ $sp }} Specialization</p>
+                    </div>
+                    <div class="my-auto">
+                        <div class="my-auto">
+                            <i class="fas fa-stethoscope"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--  Annual card end  -->
+            <!--  Tasks card start  -->
+            <div class="pl-1 w-96 h-20 bg-purple-500 rounded-lg shadow-md">
+                <div class="flex w-full h-full py-2 px-4 bg-white rounded-lg justify-between">
+                    <div class="my-auto">
+                        <p class=" uppercase font-bold">Medicine</p>
+                        <p class="text-lg">{{ $med }} Medicine</p>
+                    </div>
+                    <div class="my-auto">
+                        <div class="my-auto">
+                            <i class="fas fa-pills"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--  Tasks card end  -->
+            <!--  Pending requests card start  -->
+            <div class="pl-1 w-96 h-20 bg-yellow-400 rounded-lg shadow-md">
+                <div class="flex w-full h-full py-2 px-4 bg-white rounded-lg justify-between">
+                    <div class="my-auto">
+                        <p class="uppercase font-bold">Form</p>
+                        <p class="text-lg">{{ $form }} Form</p>
+                    </div>
+                    <div class="my-auto">
+                        <i class="fas fa-clipboard-list"></i>
+                    </div>
+                </div>
+            </div>
+            <!--  Pending requests card end  -->
+        </div>
+        <script>
+            $(document).ready(function() {
+                var monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September",
+                    "October", "November", "December"
+                ];
+                var dayNames = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
+
+                var newDate = new Date();
+                newDate.setDate(newDate.getDate());  
+                $('#Date').html(dayNames[newDate.getDay()] + ", " + newDate.getDate() + ' ' + monthNames[newDate
+                    .getMonth()] + ' ' + newDate.getFullYear());
+
+                setInterval(function() {
+                    var seconds = new Date().getSeconds();
+                    $("#sec").html((seconds < 10 ? "0" : "") + seconds);
+                }, 1000);
+
+                setInterval(function() {
+                    var minutes = new Date().getMinutes();
+                    $("#min").html((minutes < 10 ? "0" : "") + minutes);
+                }, 1000);
+
+                setInterval(function() {
+                    var hours = new Date().getHours();
+                    $("#hours").html((hours < 10 ? "0" : "") + hours);
+                }, 1000);
+
+            });
+        </script>
+
+
         {{-- <!-- AlpineJS -->
     <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
     <!-- Font Awesome -->

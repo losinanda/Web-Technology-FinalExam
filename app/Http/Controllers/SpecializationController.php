@@ -15,7 +15,7 @@ class SpecializationController extends Controller
      */
     public function index()
     {
-        $s = Specialization::paginate(5);
+        $s = Specialization::orderBy('updated_at', 'desc')->paginate(5);
         return view('backpage.specialization',['s' => $s]);
     }
 

@@ -9,7 +9,7 @@ use App\Models\Post;
 class Category extends Model
 {
     use HasFactory;
-    protected $guarded = ['id'];
+    protected $primaryKey= 'id';
 
     public function post(){
         return $this->hasMany(Post::class);

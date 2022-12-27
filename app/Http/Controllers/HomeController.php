@@ -48,23 +48,23 @@ class HomeController extends Controller
         return view('backpage.medicine-list.medicine-list', [
             // "title" => "Obat Admin",
             "posts" => $s,
-            "s" => $sp
+            "s" => $sp,
         ]);
     }
 
     public function search_obat()
     {
-        //$s = Category::all();
-        $post = new Post;
+        $s = Category::all();
+        $posts = new Post;
         if (isset($_GET['search'])) {
             $search = $_GET['search'];
-            $post = $post->where('nama', 'like', "%$search%");
+            $posts = $posts->where('nama', 'like', "%$search%");
         }
         if (isset($_GET['filter']) && $_GET['filter'] != '') {
-            $post = $post->where('category_id', $_GET['filter']);
+            $posts = $posts->where('category_id', $_GET['filter']);
         }
-        $post = $post->paginate(5);
-        return view('backpage.medicine-list.medicine-list', compact('doctor'));
+        $posts = $posts->paginate(5);
+        return view('backpage.medicine-list.medicine-list', compact('posts','s'));
     }
 
     public function create()

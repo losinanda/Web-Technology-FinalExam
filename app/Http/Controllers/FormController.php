@@ -20,7 +20,7 @@ class FormController extends Controller
         //     ->join('forms', 'id_doctor', '=', 'forms.doctor')
         //     ->select('doctors.*', 'forms.*')
         //     ->get();
-        $data = Form::paginate(5);
+        $data = Form::orderBy('updated_at', 'desc')->paginate(5);
         // dd($data);
         return view('backpage.form-list.form', compact('data'));
     }

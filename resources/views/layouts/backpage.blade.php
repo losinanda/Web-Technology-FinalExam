@@ -11,7 +11,8 @@
         href="https://i0.wp.com/puskesmasbanjarsatu.bulelengkab.go.id/wp-content/uploads/2021/09/cropped-Favicon.png?fit=32%2C32&#038;ssl=1"
         sizes="32x32" />
     <link rel="stylesheet" href="//use.fontawesome.com/releases/v5.0.7/css/all.css">
-
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
     <!-- Fonts -->
     <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
     <style>
@@ -52,7 +53,7 @@
     @include('layouts.backpage.sidebar')
     <div class="w-full flex flex-col h-screen overflow-y-hidden">
         @include('layouts.backpage.navigation')
-        <div class="w-full overflow-x-hidden border-t flex flex-col">
+        <div class="w-full overflow-x-hidden border-t flex flex-col h-screen">
             <main class="w-full flex-grow px-6 py-2">
                 {{ $slot }}
             </main>
