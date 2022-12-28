@@ -64,7 +64,9 @@ Route::get('/edit/{id}', [HomeController::class, 'edit'])->name('edit_obat');
 Route::patch('/Adminobat/{id}', [HomeController::class, 'update']);
 Route::get('/Adminobat/{id}', [HomeController::class, 'destroy'])->name('delete_obat');
 
-
+Route::get('/Cart', function () {
+         return view('frontpage.cartview');
+    })->name('cart');
 // ---------------------------------------------------------------- //
 
 //Route Doctor Lists

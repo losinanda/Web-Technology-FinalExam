@@ -35,6 +35,12 @@
                         {{ __('E-Medicine') }}
                     </a>
                 </div>
+                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                    <a href="{{ route('cart') }}">
+                        <i class="fas fa-shopping-cart">
+                        </i> 
+                    </a>
+                </div>
                 @if (!Auth::user())
                     <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                         <a href="{{ route('login') }}"

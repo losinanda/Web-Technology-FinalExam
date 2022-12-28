@@ -7,6 +7,11 @@ use Illuminate\Http\Request;
 
 class FrontpageController extends Controller
 {
+    // public function cart ($id) {
+    //     $data   = Doctor::where('id_doctor',$id)->first();
+    //     return view('frontpage.form')->with('data', $data);
+    // }
+    
     public function get_form ($id) {
         $data   = Doctor::where('id_doctor',$id)->first();
         return view('frontpage.form')->with('data', $data);
