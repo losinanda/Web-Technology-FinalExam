@@ -118,8 +118,8 @@ Route::middleware('auth')->group(function () {
     //End Forms List Control
 });
 
-// Route::get('/get-started', function () {
-//     return view('frontpage.homepage-backup');
-// })->name('homepage2');
+Route::get('/get-started', function () {
+    return view('frontpage.homepage-backup');
+})->name('homepage2');
 
 require __DIR__ . '/auth.php';

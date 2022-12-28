@@ -3,7 +3,7 @@
     <div class="mx-auto">
         <div class=" bg-white grid py-10 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 items-center justify-center gap-4 ">
             @foreach ($posts as $post)
-                <div class=" mx-auto bg-white text-gray-700 w-72 min-h-[10rem]  shadow-lg overflow-hidden ">
+                <div class=" hover:scale-105 mx-auto bg-white text-gray-700 w-72 min-h-[10rem]  shadow-lg overflow-hidden ">
                     <img src="{{ url($post->image) }}" alt="" class=" w-72 h-56 object-cover ">
                     <div class=" p-5 flex flex-col gap-1 ">
                         <!-- badge -->

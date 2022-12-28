@@ -75,10 +75,11 @@
                         {{-- <span class="title-font font-medium text-2xl text-gray-900">{{ $data->harga }}</span> --}}
                         @if ($data->open != 0)
                             <button onclick="toggleModal()"
-                                class="flex ml-auto text-white border-0 py-2 px-6 focus:outline-none  bg-blue-500 hover:bg-blue-700 rounded">Create Reservation
+                                class="flex ml-auto text-white border-0 py-2 px-6 focus:outline-none  bg-blue-500 hover:bg-blue-700 rounded">Create
+                                Reservation
                                 Now</button>
                         @endif
-                        <button
+                        <button onclick="test()"
                             class="rounded-full w-10 h-10 bg-gray-200 p-0 border-0 inline-flex items-center justify-center text-gray-500 ml-4">
                             <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                 class="w-5 h-5" viewBox="0 0 24 24">
@@ -91,6 +92,13 @@
                 </div>
             </div>
         </div>
+        <script>
+            Swal.fire(
+                'Form Submitted!',
+                'Please Wait Confirmation from the Doctor!',
+                'success'
+            )
+        </script>
     </section>
     {{-- <div class="bg-white">
         <div class="container px-5 py-10 mx-auto" style="cursor: auto;">

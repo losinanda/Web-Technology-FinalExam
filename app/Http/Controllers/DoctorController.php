@@ -17,15 +17,16 @@ class DoctorController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function dashboard() {
+    public function dashboard()
+    {
         $form = Form::all()->count();
         $sp = Specialization::all()->count();
         $doctor = Doctor::all()->count();
         $med = Post::all()->count();
-        return view('backpage.dashboard',compact('form', 'sp','doctor','med'));
+        return view('backpage.dashboard', compact('form', 'sp', 'doctor', 'med'));
     }
-    
-     public function index()
+
+    public function index()
     {
         $doctor = Doctor::orderBy('updated_at', 'desc')->paginate(5);
         $s = Specialization::all();
@@ -126,8 +127,8 @@ class DoctorController extends Controller
         // $check = \public_path(). "/". $data->doctor_img;
         // dd($check);
         if ($save != null) {
-            if (File::exists(\public_path(). "/". $data->doctor_img)) {
-                File::delete(\public_path(). "/". $data->doctor_img);
+            if (File::exists(\public_path() . "/" . $data->doctor_img)) {
+                File::delete(\public_path() . "/" . $data->doctor_img);
                 $name = time() . $save->getClientOriginalName();
                 $path = $request->file('image')->storeAs('assets/images', $name);
                 $save->move(\base_path() . "/public/assets/images", $name);;
@@ -167,8 +168,8 @@ class DoctorController extends Controller
     public function destroy($id)
     {
         $data = Doctor::find($id);
-        if (File::exists(\public_path(). "/". $data->doctor_img)) {
-            File::delete(\public_path(). "/". $data->doctor_img);
+        if (File::exists(\public_path() . "/" . $data->doctor_img)) {
+            File::delete(\public_path() . "/" . $data->doctor_img);
         }
         $data->delete();
         return redirect()->route('admin_listdoctor');
