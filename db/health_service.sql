@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 25, 2022 at 05:38 PM
+-- Generation Time: Dec 29, 2022 at 01:38 PM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 8.1.1
 
@@ -60,10 +60,6 @@ CREATE TABLE `doctors` (
   `address` text COLLATE utf8mb4_unicode_ci NOT NULL,
   `phone_num` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `doctor_img` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `account` bigint(20) UNSIGNED NOT NULL,
-  `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `password` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `role` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'doctor',
   `open` tinyint(1) DEFAULT 0,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
@@ -73,14 +69,15 @@ CREATE TABLE `doctors` (
 -- Dumping data for table `doctors`
 --
 
-INSERT INTO `doctors` (`id_doctor`, `doctor_name`, `education`, `university`, `specialization`, `doctor_desc`, `address`, `phone_num`, `doctor_img`, `account`, `email`, `password`, `role`, `open`, `created_at`, `updated_at`) VALUES
-(1, 'Budi Hartono', 'S2 Kedokteran', 'UI', 1, 'Lorem ipsum', 'Singaraja', '081333444555', 'path', 2, '', '', 'doctor', 0, NULL, NULL),
-(2, 'Kanaya', 'S2 Kedokteran', 'UGM', 6, '<p>hello</p>', 'Denpasar', '085154689700', 'assets/images/1671716015Screenshot_20221214_115029.png', 0, '', '', 'doctor', 0, NULL, '2022-12-22 18:18:08'),
-(5, 'Putra', 'S1 Kedokteran', 'UNAIR', 1, '<p><em>Hello&nbsp;</em></p>', 'Badung', '081444666555', 'assets/images/1671533185logo-undiksha-terbaru-bw-1.png', 0, '', '', 'doctor', 0, '2022-12-20 02:46:25', '2022-12-20 02:46:25'),
-(6, 'Harry', 'S1 Kedokteran', 'UNUD', 6, '<p>Test</p>', 'Jakarta', '081469997886', 'assets/images/1671533230Hrs4GXxs.jpg', 0, '', '', 'doctor', 0, '2022-12-20 02:47:10', '2022-12-20 02:47:10'),
-(7, 'Rudi', 'S1 Kedokteran', 'UNILA', 5, '<p>Dummy</p>', 'Sambangan', '081649998663', 'assets/images/1671533298WhatsApp Image 2022-04-24 at 1.51.45 PM.jpeg', 0, '', '', 'doctor', 0, '2022-12-20 02:48:18', '2022-12-20 02:48:18'),
-(9, 'Kartika', 'S1 Kedokteran', 'UNDIP', 6, '<p>Deskripsi</p>', 'Penarukan', '085698770113', 'assets/images/1671537629plankton-walk.png', 0, '', '', 'doctor', 0, '2022-12-20 04:00:29', '2022-12-20 04:00:29'),
-(11, 'Dimas', 'S1 Kedokteran', 'UNS', 7, '<p>Hai</p>', 'Kayuputih', '089655387460', 'assets/images/1671715703Screenshot_20221215_120604.png', 0, '', '', 'doctor', 0, '2022-12-22 05:28:23', '2022-12-23 07:18:22');
+INSERT INTO `doctors` (`id_doctor`, `doctor_name`, `education`, `university`, `specialization`, `doctor_desc`, `address`, `phone_num`, `doctor_img`, `open`, `created_at`, `updated_at`) VALUES
+(1, 'Budi Hartono', 'S2 Kedokteran', 'UI', 11, 'dr. Jaka Pradipta, Sp.P merupakan seorang Dokter Paru. Saat ini, beliau berpraktik di Mayapada Hospital Kuningan, Jakarta dan Siloam Hospitals Asri. Adapun layanan medis yang dapat beliau berikan meliputi : Konsultasi perihal penyakit paru.\r\n\r\ndr. Jaka Pradipta, Sp.P menamatkan pendidikan Dokter Spesialis Paru di Fakultas Kedokteran Universitas Indonesia. Beliau juga terhimpun dalam organisasi Ikatan Dokter Indonesia (IDI) dan Perhimpunan Dokter Paru Indonesia (PDPI).', 'Singaraja', '081333444555', 'assets/images/doctor1.png', 0, NULL, NULL),
+(2, 'Adi Satriyo', 'S2 Kedokteran', 'UGM', 6, 'dr. Adi Satriyo, Sp.KK, FINSDV adalah seorang dokter spesialis kulit kelamin yang menyelesaikan pendidikan spesialis kulit dan kelamin di Fakultas Kedokteran Universitas Indonesia (FK UI) tahun 2013. Beliau merupakan anggota aktif Perhimpunan Dokter Spesialis Kulit dan Kelamin Indonesia (PERDOSKI), International Dermoscopy Society (IDS), dan European Academy of Dermatology and Venereology (EADV).\r\n\r\ndr. Adi Satriyo, Sp.KK, FINSDV adalah dosen di FK UI dan RS Jejaring RSUP Persahabatan. Saat ini, beliau berpraktik sebagai dokter spesialis kulit dan kelamin di Klinik Royal Medika dan RS Agung. Adapun layanan kesehatan yang diberikan adalah konsultasi dan tindakan medis di bidang kesehatan kulit dan kelamin, diantaranya adalah kesehatan kulit anak dan dewasa, penyakit kulit alergi dan autoimun, estetika medis, pengobatan kutil dan deteksi dini kanker kulit, serta pengobatan penyakit kelamin (infeksi menular seksual).', 'Denpasar', '085154689700', 'assets/images/doctor2.jpg', 1, NULL, '2022-12-22 18:18:08'),
+(5, 'Rifan Rauzi', 'S1 Kedokteran', 'UNAIR', 1, 'dr. Rifan Fauzie, Sp.A (K) adalah seorang Dokter Spesialis Anak Konsultan Respirology dengan pengalaman 11 tahun. Beliau dapat membantu layanan Konsultasi kesehatan anak yang dikhususkan pada Respirology.\r\n\r\ndr. Rifan Fauzie menamatkan pendidikan Kedokteran Spesialis Kesehatan Anak di Universitas Indonesia, lulus pada tahun 2006. Selain ittu, beliau juga merupakan anggota Ikatan Dokter Anak Indonesia (IDAI), Ikatan Dokter Indonesia (IDI).', 'Badung', '081444666555', 'assets/images/doctor3.jpg', 0, '2022-12-20 02:46:25', '2022-12-20 02:46:25'),
+(6, 'Vonny Indrianti Widjojo', 'S1 Kedokteran', 'UNUD', 6, 'dr. Vonny Indriati Widjojo, Sp.KK merupakan seorang Dokter Spesialis Kulit dan Kelamin yang telah memiliki pengalaman di Rumah Sakit Swasta Nasional dan Rumah Sakit Pemerintah. Saat ini, dr. Vonny Indriati berpraktek di Rumah Sakit Mitra Keluarga Bekasi dan Rumah Sakit Mitra Keluarga Bekasi Timur sebagai Dokter Spesialis Kulit dan Kelamin.\r\n\r\ndr. Vonny Indriati telah menamatkan pendidikan Kedokteran Spesialis Kulit dan Kelamin di Universitas Diponegoro pada tahun 1997. Adapun layanan medis yang diberikan oleh beliau, meliputi konsultasi dan layanan terkait Kulit dan Kelamin.', 'Jakarta', '081469997886', 'assets/images/doctor-female.png', 1, '2022-12-20 02:47:10', '2022-12-20 02:47:10'),
+(7, 'Amelia Suganda', 'S1 Kedokteran', 'UNILA', 5, 'dr. Amelia Suganda, Sp.OG merupakan seorang Dokter Kandungan. Beliau lulusan pendidikan Spesialis Obstetri dan Ginekologi Universitas Padjadjaran, Bandung. Saat ini beliau berpraktek di Rumah Sakit Mitra Plumbon Cirebon dan RS Sumber Kasih Cirebon.\r\n\r\ndr. Amelia Suganda, Sp.OG merupakan anggota dari Ikatan Dokter Indonesia (IDI) dan Perkumpulan Obstetri dan Ginekologi Indonesia (POGI). Layanan yang diberikan oleh beliau yaitu konsultasi mengenai kesehatan Kebidanan dan Kandungan.', 'Sambangan', '081649998663', 'assets/images/doctor-female.png', 0, '2022-12-20 02:48:18', '2022-12-20 02:48:18'),
+(9, 'Sujan Ali Fing', 'S1 Kedokteran', 'UNDIP', 7, 'dr. Sujan Ali Fing, SpM, MSOphth merupakan Dokter Spesialis Mata yang saat ini aktif berpraktik di Rumah Sakit Khusus Mata Prima Vision, Medan. Sebelum bergabung di RS Khusus Mata Prima Vision. Beliau merupakan Chief of Ophthalmologist di RS Columbia Asia Medan. Beliau terhimpun dalam Perhimpunan Dokter Spesialis Mata Indonesia (PERDAMI) dan Ikatan Dokter Indonesia (IDI).\r\n\r\nSebagai salah satu lulusan terbaik dari Fakultas Kedokteran Umum, Universitas Sumatera Utara, beliau memperoleh beasiswa penuh dari Lee Foundation, Singapore, untuk melanjutkan Spesialis Mata (Master of Surgery, Ophthalmology) di National University Hospital, Malaysia (HUKM) dan juga telah menyelesaikan fellowship di bidang Vitreoretina. Adapun layanan yang dr. Sujan berikan meliputi Pemeriksaan dan Konsultasi Mata.', 'Penarukan', '085698770113', 'assets/images/doctor2.jpg', 1, '2022-12-20 04:00:29', '2022-12-20 04:00:29'),
+(11, 'Dimas', 'S1 Kedokteran', 'UNS', 7, '<p>Hai</p>', 'Kayuputih', '089655387460', 'assets/images/doctor4.jpg', 0, '2022-12-22 05:28:23', '2022-12-23 07:18:22'),
+(23, 'test', 'test', 'test', 1, '<p>test</p>', 'test', '081', 'assets/images/1672201409doctor2.png', 0, '2022-12-27 20:23:30', '2022-12-27 20:23:30');
 
 -- --------------------------------------------------------
 
@@ -106,13 +103,13 @@ CREATE TABLE `failed_jobs` (
 
 CREATE TABLE `forms` (
   `id_form` bigint(20) UNSIGNED NOT NULL,
-  `doctor` bigint(20) UNSIGNED NOT NULL,
-  `form_name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `form_phonenum` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `address` text COLLATE utf8mb4_unicode_ci NOT NULL,
-  `form_desc` text COLLATE utf8mb4_unicode_ci NOT NULL,
-  `form_date` date NOT NULL,
-  `form_time` time NOT NULL,
+  `doctor` bigint(20) UNSIGNED DEFAULT NULL,
+  `form_name` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `form_phonenum` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `address` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `form_desc` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `form_date` date DEFAULT NULL,
+  `form_time` time DEFAULT NULL,
   `accept` tinyint(1) NOT NULL DEFAULT 0,
   `doctor_note` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
@@ -124,9 +121,45 @@ CREATE TABLE `forms` (
 --
 
 INSERT INTO `forms` (`id_form`, `doctor`, `form_name`, `form_phonenum`, `address`, `form_desc`, `form_date`, `form_time`, `accept`, `doctor_note`, `created_at`, `updated_at`) VALUES
-(2, 1, 'Adi Sastrawan', '081338556440', 'Banjar', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vitae ligula ut diam posuere condimentum. Ut nec turpis justo. In et pellentesque nisl. Ut eget augue risus. Vivamus at iaculis risus. Praesent ac viverra justo. Nam non tortor sem. Mauris vitae purus finibus, venenatis diam pulvinar, tincidunt ipsum. Nunc sollicitudin euismod sapien, vel pharetra risus luctus vitae. Curabitur aliquam finibus libero ac interdum. Suspendisse pellentesque ex nec erat eleifend, eu euismod est maximus. Sed tincidunt fringilla elementum. Morbi vestibulum mauris in leo convallis porttitor. Sed egestas molestie nibh eu suscipit. In sollicitudin ligula in urna dictum viverra. Quisque augue eros, fringilla a erat et, mollis volutpat justo.', '2022-12-21', '07:16:00', 1, 'Test', NULL, '2022-12-23 17:43:56'),
-(4, 2, 'Bayu Danu', '085338674951', 'Sepang', 'Saya mengalami sakit tenggorokan', '2022-12-06', '16:25:20', 2, NULL, NULL, '2022-12-23 17:44:22'),
-(5, 2, 'Tegar ', '085338613987', 'Gilimanuk', 'Saya mengalami pilek', '2022-12-11', '10:05:00', 2, NULL, NULL, '2022-12-23 00:00:12');
+(2, 1, 'Adi', '081338556440', 'Banjar', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vitae ligula ut diam posuere condimentum. Ut nec turpis justo. In et pellentesque nisl. Ut eget augue risus. Vivamus at iaculis risus. Praesent ac viverra justo. Nam non tortor sem. Mauris vitae purus finibus, venenatis diam pulvinar, tincidunt ipsum. Nunc sollicitudin euismod sapien, vel pharetra risus luctus vitae. Curabitur aliquam finibus libero ac interdum. Suspendisse pellentesque ex nec erat eleifend, eu euismod est maximus. Sed tincidunt fringilla elementum. Morbi vestibulum mauris in leo convallis porttitor. Sed egestas molestie nibh eu suscipit. In sollicitudin ligula in urna dictum viverra. Quisque augue eros, fringilla a erat et, mollis volutpat justo.', '2022-12-21', '07:16:00', 1, 'Test', NULL, '2022-12-23 17:43:56'),
+(4, 2, 'Bayu', '085338674951', 'Sepang', 'Saya mengalami sakit tenggorokan', '2022-12-06', '16:25:20', 2, NULL, NULL, '2022-12-23 17:44:22'),
+(5, 2, 'Tegar ', '085338613987', 'Gilimanuk', 'Saya mengalami pilek', '2022-12-11', '10:05:00', 2, NULL, NULL, '2022-12-23 00:00:12'),
+(10, 2, 'Agung', '088', 'Singaraja', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vitae ligula ut diam posuere condimentum. Ut nec turpis justo. In et pellentesque nisl. Ut eget augue risus. Vivamus at iaculis risus. Praesent ac viverra justo. Nam non tortor sem. Mauris vitae purus finibus, venenatis diam pulvinar, tincidunt ipsum. Nunc sollicitudin euismod sapien, vel pharetra risus luctus vitae. Curabitur aliquam finibus libero ac interdum. Suspendisse pellentesque ex nec erat eleifend, eu euismod est maximus. Sed tincidunt fringilla elementum. Morbi vestibulum mauris in leo convallis porttitor. Sed egestas molestie nibh eu suscipit. In sollicitudin ligula in urna dictum viverra. Quisque augue eros, fringilla a erat et, mollis volutpat justo.', '2022-12-26', '10:56:00', 0, NULL, '2022-12-25 18:56:44', '2022-12-25 18:56:44'),
+(11, 6, 'Sastra', '087946302111', 'Jakarta', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vitae ligula ut diam posuere condimentum. Ut nec turpis justo. In et pellentesque nisl. Ut eget augue risus. Vivamus at iaculis risus. Praesent ac viverra justo. Nam non tortor sem. Mauris vitae purus finibus, venenatis diam pulvinar, tincidunt ipsum. Nunc sollicitudin euismod sapien, vel pharetra risus luctus vitae. Curabitur aliquam finibus libero ac interdum. Suspendisse pellentesque ex nec erat eleifend, eu euismod est maximus. Sed tincidunt fringilla elementum. Morbi vestibulum mauris in leo convallis porttitor. Sed egestas molestie nibh eu suscipit. In sollicitudin ligula in urna dictum viverra. Quisque augue eros, fringilla a erat et, mollis volutpat justo.', '2022-12-28', '10:03:00', 0, NULL, '2022-12-25 18:58:05', '2022-12-25 18:58:05'),
+(13, 6, 'Kadek', '081769853045', 'Negara', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vitae ligula ut diam posuere condimentum. Ut nec turpis justo. In et pellentesque nisl. Ut eget augue risus. Vivamus at iaculis risus. Praesent ac viverra justo. Nam non tortor sem. Mauris vitae purus finibus, venenatis diam pulvinar, tincidunt ipsum. Nunc sollicitudin euismod sapien, vel pharetra risus luctus vitae. Curabitur aliquam finibus libero ac interdum. Suspendisse pellentesque ex nec erat eleifend, eu euismod est maximus. Sed tincidunt fringilla elementum. Morbi vestibulum mauris in leo convallis porttitor. Sed egestas molestie nibh eu suscipit. In sollicitudin ligula in urna dictum viverra. Quisque augue eros, fringilla a erat et, mollis volutpat justo.', '2022-12-22', '16:33:18', 0, NULL, NULL, NULL),
+(14, 2, 'hapus', '000', 'Tes', 'test', '2022-12-28', '08:59:00', 0, NULL, '2022-12-27 16:59:57', '2022-12-27 16:59:57'),
+(15, 2, 'aaaa', '081', 'aaa', 'aaaa', '2022-12-13', '11:03:00', 2, NULL, '2022-12-27 19:03:36', '2022-12-27 19:03:48'),
+(16, 2, 'Test', '088', 'Sudaji', 'test', '2022-12-28', '12:18:00', 2, NULL, '2022-12-27 20:18:09', '2022-12-28 18:52:12');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `medicine`
+--
+
+CREATE TABLE `medicine` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `category_id` bigint(20) UNSIGNED NOT NULL DEFAULT 1,
+  `toko` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `harga` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `nama` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `image` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `deskripsi` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `medicine`
+--
+
+INSERT INTO `medicine` (`id`, `category_id`, `toko`, `harga`, `nama`, `image`, `deskripsi`, `created_at`, `updated_at`) VALUES
+(22, 2, 'Tempo', '10.000', 'Paracetamol', 'assets/images/1672019473paracetamol.png', 'PARACETAMOL merupakan obat yang dapat digunakan untuk meringankan rasa sakit pada sakit kepala, sakit gigi, dan menurunkan demam. Paracetamol bekerja pada pusat pengatur suhu di hipotalamus untuk menurunkan suhu tubuh (antipiretik) serta menghambat sintesis prostaglandin sehingga dapat mengurangi nyeri ringan sampai sedang (analgesik).', '2022-12-19 22:51:19', '2022-12-25 17:51:13'),
+(26, 1, 'Kalbe', '30.000', 'Bodrex', 'assets/images/bodrex3.jpg', 'BODREX merupakan obat dengan kandungan Paracetamol dan Caffeine. Obat ini digunakan untuk meringankan sakit kepala, sakit gigi, dan menurunkan demam. Dosis\r\nDewasa dan anak lebih dari 12 tahun : 1 tablet, 3-4 kali sehari.\r\nAnak 6-12 tahun : 0.5 - 1 tablet, 3-4 kali sehari.\r\n\r\nAturan Pakai\r\nDikonsumsi setelah makanan', '2022-12-20 05:28:27', '2022-12-25 17:49:31'),
+(27, 4, 'Jaya Abadi', '10.000', 'Aviter', 'assets/images/aviter3.jpg', 'Aviter adalah suplemen yang digunakan untuk meningkatkan sistem imunitas atau sistem kekebalan tubuh. Aviter mengandung glukosamin, asam amino, dan juga beberpa jenis vitamin, serta mineral yang sangat dibutuhkan oleh tubuh. Aviter diproduksi oleh Interbat dalam bentuk sediaan serbuk sachet.', '2022-12-20 05:36:53', '2022-12-25 17:49:43'),
+(29, 1, 'Kimia Farma', '20.000', 'Imboost', 'assets/images/imboost.png', 'KANDUNGAN/KOMPOSISI\r\nEchinacea 250 mg, Zinc Picolinate 10 mg\r\n\r\nKONTRAINDIKASI // JANGAN DIGUNAKAN OLEH\r\nTidak boleh digunakan oleh penderita sklerosis multipel, penyakit leukemia, tuberkulosis, AIDS, dan penyakit autoimun.\r\nPerhatian\r\n\r\nDOSIS\r\nDewasa dan Anak diatas 12 tahun: 1 tablet, 2-3 kali per hari\r\n\r\nCARA PEMAKAIAN\r\nSesudah makan\r\n\r\nINDIKASI/ KEGUNAAN\r\nIMBOOST TABLET merupakan suplemen dengan kandungan Echinacea purpurea herb dry extract dan Zn Piccolinate dalam bentuk tablet salut selaput. Suplemen ini digunakan untuk meningkatkan daya tahan tubuh yang berfungsi untuk mencegah dari sakit dan mempercepat penyembuhan.\r\n\r\nMANUFAKTUR\r\nSoho Industri Pharmasi\r\n\r\nKEMASAN\r\n1 Strip : 10 tablet\r\n\r\nPERHATIAN KHUSUS\r\nHentikan pemakaian jika terjadi reaksi alergi. Tidak dianjurkan digunakan lebih dari 8 minggu. Hindari penggunaan pada wanita hamil dan menyusui. Konsultasikan dengan dokter jika digunakan bersama obat lain.\r\n\r\n\r\nCARA PENYIMPANAN\r\nSimpan di tempat yang kering dan terhindar dari sinar matahari langsung\r\n\r\nPERLU RESEP\r\nNo\r\n\r\nGOLONGAN\r\nVitamin & Supplement', '2022-12-25 17:38:03', '2022-12-25 17:38:03'),
+(30, 1, 'Bayer', '15.000', 'Redoxon', 'assets/images/1672019568image.jpg', 'Redoxon Triple Action\r\nRedoxon terus berinovasi memberikan perlindungan optimal. Kini dilengkapi dengan vitamin D yang bekerja sama dengan vitamin C dan Zinc membantu menjaga daya tahan tubuh pada saat perjalanan, kondisi perubahan cuaca, dan paparan polusi\r\n\r\nInformasi Nutrisi AKG%\r\n• Vitamin C 1000 mg 1110%\r\n• Vitamin D 400IU 65%\r\n• Zinc 10 mg 75%\r\n\r\nKegunaan\r\nSuplementasi Vitamin C dan Zinc untuk memelihara daya tahan tubuh\r\n\r\nVitamin C\r\nVitamin C 1000 mg bermanfaat untuk membantu menjaga daya tahan tubuh dan kesehatan serta berperan sebagai antioksidan untuk menangkal radikal bebas.\r\n\r\nVitamin D\r\nVitamin D bermanfaat untuk membantu kinerja kelompok sel darah putih dalam menjaga daya tahan tubuh.\r\n\r\nZinc\r\n• Membantu kinerja Vitamin C sehingga menjadi lebih efektif dalam menjaga daya tahan tubuh.\r\n• Zinc tidak dapat diproduksi tubuh. Jika asupan dari makanan tidak mencukupi kebutuhan harian, bila perlu, dapat diberikan suplementasi.\r\n\r\nAnjuran Pemakaian\r\nSatu tablet effervescent per hari, larutkan dalam segelas air\r\n\r\nPetunjuk Penggunaan\r\nLarutkan dalam segelas air dan tunggu sampai benar-benar larut.', '2022-12-25 17:52:48', '2022-12-25 17:52:48'),
+(31, 2, 'Sterling', '25.000', 'Insto', 'assets/images/1672184886insto.jpg', NULL, '2022-12-27 15:48:06', '2022-12-27 15:48:06');
 
 -- --------------------------------------------------------
 
@@ -187,32 +220,6 @@ CREATE TABLE `personal_access_tokens` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `posts`
---
-
-CREATE TABLE `posts` (
-  `id` bigint(20) UNSIGNED NOT NULL,
-  `category_id` bigint(20) UNSIGNED NOT NULL DEFAULT 1,
-  `toko` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `harga` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `nama` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `image` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
---
--- Dumping data for table `posts`
---
-
-INSERT INTO `posts` (`id`, `category_id`, `toko`, `harga`, `nama`, `image`, `created_at`, `updated_at`) VALUES
-(22, 2, 'sumber ga waras', '1.000.000', 'paracetamol gila', 'assets/images/1671971583paracetamol.png', '2022-12-19 22:51:19', '2022-12-25 04:33:03'),
-(26, 1, 'Apa aja boleh', '30.000', 'bodrex', 'assets/images/1671542907bodrex3.jpg', '2022-12-20 05:28:27', '2022-12-20 05:28:27'),
-(27, 4, 'Jaya Abadi', '1.000', 'aviter', 'assets/images/1671543413aviter3.jpg', '2022-12-20 05:36:53', '2022-12-20 05:36:53');
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `specializations`
 --
 
@@ -234,7 +241,9 @@ INSERT INTO `specializations` (`id_specialization`, `name_specialization`, `crea
 (6, 'Spesialis Kulit (Sp.KK)', NULL, NULL),
 (7, 'Spesialis Mata (Sp.M)', '2022-12-22 05:00:04', '2022-12-22 05:00:04'),
 (11, 'Spesialis Paru (Sp.P)', '2022-12-22 19:51:22', '2022-12-22 19:51:22'),
-(12, 'Spesialis Penyakit Mulut (Sp. PM)', '2022-12-22 19:57:43', '2022-12-22 20:10:32');
+(12, 'Spesialis Penyakit Mulut (Sp. PM)', '2022-12-22 19:57:43', '2022-12-22 20:10:32'),
+(13, 'Spesialis Jantung', '2022-12-27 15:51:29', '2022-12-27 15:51:29'),
+(14, 'test', '2022-12-27 20:21:20', '2022-12-27 20:21:20');
 
 -- --------------------------------------------------------
 
@@ -281,8 +290,7 @@ ALTER TABLE `categories`
 --
 ALTER TABLE `doctors`
   ADD PRIMARY KEY (`id_doctor`),
-  ADD KEY `doctors_specialization_foreign` (`specialization`),
-  ADD KEY `doctor_fk_account` (`account`);
+  ADD KEY `doctors_specialization_foreign` (`specialization`);
 
 --
 -- Indexes for table `failed_jobs`
@@ -297,6 +305,13 @@ ALTER TABLE `failed_jobs`
 ALTER TABLE `forms`
   ADD PRIMARY KEY (`id_form`),
   ADD KEY `forms_doctor_foreign` (`doctor`);
+
+--
+-- Indexes for table `medicine`
+--
+ALTER TABLE `medicine`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `medicine_fk_categories` (`category_id`);
 
 --
 -- Indexes for table `migrations`
@@ -317,12 +332,6 @@ ALTER TABLE `personal_access_tokens`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `personal_access_tokens_token_unique` (`token`),
   ADD KEY `personal_access_tokens_tokenable_type_tokenable_id_index` (`tokenable_type`,`tokenable_id`);
-
---
--- Indexes for table `posts`
---
-ALTER TABLE `posts`
-  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `specializations`
@@ -351,7 +360,7 @@ ALTER TABLE `categories`
 -- AUTO_INCREMENT for table `doctors`
 --
 ALTER TABLE `doctors`
-  MODIFY `id_doctor` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `id_doctor` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 
 --
 -- AUTO_INCREMENT for table `failed_jobs`
@@ -363,7 +372,13 @@ ALTER TABLE `failed_jobs`
 -- AUTO_INCREMENT for table `forms`
 --
 ALTER TABLE `forms`
-  MODIFY `id_form` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id_form` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+
+--
+-- AUTO_INCREMENT for table `medicine`
+--
+ALTER TABLE `medicine`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
 
 --
 -- AUTO_INCREMENT for table `migrations`
@@ -378,22 +393,38 @@ ALTER TABLE `personal_access_tokens`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `posts`
---
-ALTER TABLE `posts`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
-
---
 -- AUTO_INCREMENT for table `specializations`
 --
 ALTER TABLE `specializations`
-  MODIFY `id_specialization` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id_specialization` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `doctors`
+--
+ALTER TABLE `doctors`
+  ADD CONSTRAINT `doctor_fk_specialization` FOREIGN KEY (`specialization`) REFERENCES `specializations` (`id_specialization`);
+
+--
+-- Constraints for table `forms`
+--
+ALTER TABLE `forms`
+  ADD CONSTRAINT `forms_fk_doctors` FOREIGN KEY (`doctor`) REFERENCES `doctors` (`id_doctor`);
+
+--
+-- Constraints for table `medicine`
+--
+ALTER TABLE `medicine`
+  ADD CONSTRAINT `medicine_fk_categories` FOREIGN KEY (`category_id`) REFERENCES `categories` (`id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
